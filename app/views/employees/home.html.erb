@@ -2,12 +2,15 @@
 <b>Your days are numbered. Count them here.</b>
 <p>
 <p>
-	<%= link_to 'Show', @current_user, :class => 'btn btn-info' %>
+	<%= link_to 'Show', @current_user, :class => 'btn btn-large btn-primary' %>
 <p>
 <br>
+
+<% if current_user.admin? %>
 <b>Employee controller!</b><br>
 
 <%= link_to 'New Employee', new_employee_path, :class => 'btn' %><%= link_to 'View Employees', employees_path, :class => 'btn' %><p></p><br>
 <b>Furlough controller!</b><br>
 <%= link_to 'New Furlough', new_furlough_path, :class => 'btn' %> <%= link_to 'View Furloughs', furloughs_path, :class => 'btn' %>
 <p>
+	<% end %>

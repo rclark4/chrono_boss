@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :authorize
-  before_filter :authorize_admin, :only => [:index, :new]
+  skip_before_filter :authorize, only: [:new, :create] 
+  # before_filter :authorize_admin, :only => [:index, :new]
 
 	private
 

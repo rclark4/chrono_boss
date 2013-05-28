@@ -1,7 +1,6 @@
 class Employee < ActiveRecord::Base
   attr_accessible :employee_id, :first_name, :hire_date, :last_name, :sick_days, :vacation_days, :sick_days_used, :vacation_days_used
   validates :employee_id, :first_name, :last_name, :sick_days, :vacation_days, :sick_days_used, :vacation_days_used, :presence => true
-  # belongs_to :user, :allow_nil => true
   has_many :furloughs, :dependent => :destroy
 
   def years_employed

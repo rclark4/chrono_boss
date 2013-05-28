@@ -1,7 +1,4 @@
 class FurloughsController < ApplicationController
-  # before_filter :authorize, only: [:edit, :update] 
-   # before_filter :authorized_user, :only => :destroy
-
 
   def index
     @furloughs = Furlough.order(:date_from).reverse

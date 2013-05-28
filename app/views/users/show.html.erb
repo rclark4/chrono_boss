@@ -56,6 +56,7 @@
     <th></th>   
     <th>Note</th>
     <th></th>
+    <th>Edit</th>
   </tr>
 
 <% @employee.furloughs.each do |furlough| %>
@@ -70,6 +71,7 @@
     <td></td>    
     <td><%= furlough.note %></td>
     <td></td>
+    <td><%= link_to 'Edit', edit_furlough_path(furlough), :class => 'btn btn-mini' %></td>
   </tr>
 <% end %>
 </table>

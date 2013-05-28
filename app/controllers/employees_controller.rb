@@ -1,7 +1,4 @@
 class EmployeesController < ApplicationController
-  # before_filter :authorize, only: [:edit, :update] 
-  # before_filter :correct_user, :only => [:edit, :update]
-  # before_filter :admin_user,   :only => :destroy
   
   def index
     @employees = Employee.order(:last_name)
