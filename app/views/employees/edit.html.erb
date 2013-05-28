@@ -1,0 +1,7 @@
+<h1>Editing employee</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'View', @employee, :class => 'btn btn-mini' %> |
+<%= link_to 'Back to Employees', employees_path, :class => 'btn btn-mini' %>
+<%= link_to 'Destroy', @employee, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini' %>

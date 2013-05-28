@@ -1,0 +1,44 @@
+<h1>Chrono Boss</h1>
+<%= link_to 'New Employee', new_employee_path, :class => 'btn' %>  <%= link_to "View all Furloughs", furloughs_path, :class => 'btn' %><%= link_to 'Home', home_path, :class => 'btn'  %>
+<table class="table table-bordered">
+  <tr>
+   <th>ID</th>
+    <th>Employee</th>
+    <th>Hired on</th>
+    <th></th>
+    <th>Years Employed</th>
+    <th></th>
+    <th>Remaining Sick Days</th>
+    <th></th>
+    <th>Earned Vacation Days</th>
+    <th></th>
+    <th>Remaining Vacation Days (+ Rollover)</th>
+    <th></th>
+    <th>Overview</th>
+    <th></th>
+    <th>Edit</th>
+  </tr>
+
+<% @employees.each do |employee| %>
+  <tr class="table table-hover">
+    <td><%= employee.employee_id %></td>
+    <td><%= employee.first_name + " " + employee.last_name %></td>
+    <td><%= employee.hire_date %></td>
+    <td></td>
+    <td><%= employee.years_employed %></td>
+    <td></td>
+    <td><%= employee.remaining_sick_days %></td>
+    <td></td>
+    <td><%= employee.vacation_days %></td>
+    <td></td>
+    <td><%= employee.remaining_vacation_days %></td>
+    <td></td>
+    <td><%= link_to 'Show', employee, :class => 'btn btn-mini' %></td>
+    <td></td>
+    <td><%= link_to 'Edit', edit_employee_path(employee),  :class => 'btn btn-mini' %></td>
+    <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

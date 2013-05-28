@@ -1,0 +1,49 @@
+<%= form_for(@furlough) do |f| %>
+  <% if @furlough.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@furloughs.errors.count, "error") %> prohibited this furlough from being saved:</h2>
+
+      <ul>
+      <% @furlough.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="input-mini", "field">
+    <%= f.label :employee_id %><br />
+    <%= f.number_field :employee_id %>
+  </div>
+  <div class="field">
+    <%= f.label :date_from %><br />
+    <%= f.date_select :date_from %>
+  </div>
+  <div class="field">
+    <%= f.label :date_to %><br />
+    <%= f.date_select :date_to %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><p>
+    <%= f.radio_button :description, 'Vacation', :checked => true %> Vacation
+    <%= f.radio_button :description, 'Sick' %> Sick
+  </div>
+  <div class="field">
+    <%= f.label :length_of_day %> <p>
+    <%= f.radio_button :length_of_day, 'Full', :checked => true %> Full
+    <%= f.radio_button :length_of_day, 'Half' %> Half
+  </div>
+
+  <div class="field">
+    <%= f.label :note %> <p>
+    <%= f.text_field :note %> 
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+
+<% end %>

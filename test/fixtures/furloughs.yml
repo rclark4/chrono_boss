@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  duration: 1.5
+  date_from: 2013-05-21
+  date_to: 2013-05-21
+  description: MyString
+  length_of_day: MyString
+  note: MyText
+  employee_id: 1
+
+two:
+  duration: 1.5
+  date_from: 2013-05-21
+  date_to: 2013-05-21
+  description: MyString
+  length_of_day: MyString
+  note: MyText
+  employee_id: 1

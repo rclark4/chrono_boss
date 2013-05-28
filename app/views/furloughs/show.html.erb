@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>my furlough history</h1>
+
+<p> 
+  <b>Name:</b>
+  <%= @furlough.employee.first_name + " " + @furlough.employee.last_name %>
+
+<p>
+  <b>When:</b>
+  <%= @furlough.date_from %> <i class="icon-search icon-arrow-right"></i> 
+  <%= @furlough.date_to %>
+</p>
+
+
+<p>
+  <b>Type:</b>
+  <%= @furlough.description %>
+</p>
+
+<p>
+  <b>Duration:</b>
+  <%= @furlough.vacation_duration + @furlough.sick_duration + @furlough.vacation_duration_last_year + @furlough.sick_duration_last_year + @furlough.vacation_duration_history + @furlough.sick_duration_history %> day(s)
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @furlough.note %>
+</p>
+
+<p>
+  <b><h3>remaining</b></h3></p>
+  <b>Vacation</b>
+  <%= @furlough.employee.remaining_vacation_days %> days(s)
+  <br><b>Sick:</b>
+  <%= @furlough.employee.remaining_sick_days %> day(s)
+</p>
+
+
+<p></p>
+<%= link_to "New Request", new_furlough_path, :class => 'btn' %>
+<%= link_to 'Edit', edit_furlough_path(@furlough), :class => 'btn' %>
+<%= link_to 'View all Furloughs', furloughs_path, :class => 'btn' %>

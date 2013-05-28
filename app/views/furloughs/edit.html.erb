@@ -1,0 +1,7 @@
+<h1>Editing furlough</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'View', @furlough, :class => 'btn btn-mini' %>
+<%= link_to 'Back to Furloughs', furloughs_path, :class => 'btn btn-mini' %>
+<%= link_to 'Destroy', @furlough, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini' %>

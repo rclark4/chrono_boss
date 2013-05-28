@@ -1,0 +1,2 @@
+module FurloughsHelper
+end

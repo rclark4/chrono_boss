@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  employee_id: 1
+  first_name: MyString
+  last_name: MyString
+  hire_date: 2013-05-21
+  sick_days: 1.5
+  vacation_days: 1.5
+  sick_days_used: 1.5
+  vacation_days_used: 1.5
+  remaining_sick_days: 1.5
+  remaining_vacation_days: 1.5
+  employee_id: 1
+
+two:
+  employee_id: 1
+  first_name: MyString
+  last_name: MyString
+  hire_date: 2013-05-21
+  sick_days: 1.5
+  vacation_days: 1.5
+  sick_days_used: 1.5
+  vacation_days_used: 1.5
+  remaining_sick_days: 1.5
+  remaining_vacation_days: 1.5
+  employee_id: 1

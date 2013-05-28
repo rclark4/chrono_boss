@@ -1,0 +1,54 @@
+<h1>Furlough and behold</h1>
+
+<%= link_to 'New Furlough', new_furlough_path, :class => 'btn'  %> <%= link_to "View all Employees", employees_path, :class => 'btn' %> <%= link_to 'Home', home_path, :class => 'btn'  %>
+
+<table class="table table-bordered">
+  <tr>
+   <th>ID</th>
+    <th>Name</th>
+    <th>From</th>
+    <th></th>
+    <th>To</th>
+    <th></th>
+    <th>Desc.</th>
+    <th></th>    
+    <th>Duration</th>
+    <th></th>   
+    <th>Sick days remaining</th>
+    <th></th>
+    <th>Vacation days remaining (+ rollover)</th>
+    <th></th>
+    <th>Note</th>
+    <th></th>
+    <th>Overview</th>
+    <th></th>
+    <th>Edit</th>
+  </tr>
+
+<% @furloughs.each do |furlough| %>
+  <tr class="table table-hover">
+    <td><%= furlough.employee.employee_id %></td>
+    <td><%= furlough.employee.first_name + " " + furlough.employee.last_name %></td>
+    <td><%= furlough.date_from %></td>
+    <td></td>
+    <td><%= furlough.date_to %></td>
+    <td></td>
+    <td><%= furlough.description %></td>
+    <td></td>
+    <td><%= furlough.duration_aggregate %></td>
+    <td></td>    
+    <td><%= furlough.employee.remaining_sick_days %></td>
+    <td></td>
+    <td><%= furlough.employee.remaining_vacation_days %></td>
+    <td></td>
+    <td><%= furlough.note %></td>
+    <td></td>
+    <td><%= link_to 'Show', furlough, :class => 'btn btn-mini' %></td>
+    <td></td>
+    <td><%= link_to 'Edit', edit_furlough_path(furlough), :class => 'btn btn-mini' %></td>
+    <td><%= link_to 'Destroy', furlough, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
