@@ -39,6 +39,16 @@
     <%= f.text_field :note %> 
   </div>
 
+    <% if current_user.admin? %>
+
+  <div class="field">
+    <%= f.label :approve %><p>
+    <%= f.radio_button :approved, true, :checked => true %> Approve
+    <%= f.radio_button :approved, false %> Not approved
+  </div>
+
+    <% end %>
+
 
   <div class="actions">
     <%= f.submit %>

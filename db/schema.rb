@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130528151515) do
+ActiveRecord::Schema.define(:version => 20130528192232) do
 
   create_table "employees", :force => true do |t|
     t.integer  "employee_id"
@@ -36,8 +36,9 @@ ActiveRecord::Schema.define(:version => 20130528151515) do
     t.string   "length_of_day"
     t.text     "note"
     t.integer  "employee_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.boolean  "approved",      :default => false
   end
 
   create_table "users", :force => true do |t|

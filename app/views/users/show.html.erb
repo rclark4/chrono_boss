@@ -56,6 +56,8 @@
     <th></th>   
     <th>Note</th>
     <th></th>
+    <th>Approved</th>
+    <th></th>    
     <th>Edit</th>
   </tr>
 
@@ -70,6 +72,8 @@
     <td><%= furlough.vacation_duration + furlough.sick_duration + furlough.vacation_duration_last_year + furlough.sick_duration_last_year + furlough.vacation_duration_history + furlough.sick_duration_history %></td>
     <td></td>    
     <td><%= furlough.note %></td>
+    <td></td>
+    <td><%= furlough.approved %></td>
     <td></td>
     <td><%= link_to 'Edit', edit_furlough_path(furlough), :class => 'btn btn-mini' %></td>
   </tr>

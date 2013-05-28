@@ -20,13 +20,17 @@
     <th></th>
     <th>Note</th>
     <th></th>
+    <th>Approved</th>
+    <th></th>
     <th>Overview</th>
     <th></th>
     <th>Edit</th>
   </tr>
 
 <% @furloughs.each do |furlough| %>
+  
   <tr class="table table-hover">
+
     <td><%= furlough.employee.employee_id %></td>
     <td><%= furlough.employee.first_name + " " + furlough.employee.last_name %></td>
     <td><%= furlough.date_from %></td>
@@ -42,6 +46,8 @@
     <td><%= furlough.employee.remaining_vacation_days %></td>
     <td></td>
     <td><%= furlough.note %></td>
+    <td></td>
+    <td><%= furlough.approved %></td>
     <td></td>
     <td><%= link_to 'Show', furlough, :class => 'btn btn-mini' %></td>
     <td></td>

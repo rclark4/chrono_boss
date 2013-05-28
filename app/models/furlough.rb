@@ -1,6 +1,6 @@
 class Furlough < ActiveRecord::Base
   
-  attr_accessible :vacation_duration, :sick_duration, :note, :date_from, :date_to, :description, :employee_id, :length_of_day
+  attr_accessible :vacation_duration, :sick_duration, :note, :date_from, :date_to, :description, :employee_id, :length_of_day, :approved
   belongs_to :employee
   validates_presence_of :date_from, :date_to, :employee_id, :description, :vacation_duration, :sick_duration
   validate :validate_same_day_half_day #, :validate_date_from_before_date_to, :validate_vacation_cap, :validate_sick_day_cap,
@@ -116,6 +116,14 @@ class Furlough < ActiveRecord::Base
       errors.add(:whoops!, "You have to select 'Full' to do that.")
     end
   end
+
+  # def is_approved?
+  #   if :approved => true
+  #     "Approved"
+  #   else 
+  #     "Not approved"
+  #   end
+  # end
 
   # def validate_vacation_cap
   #   if employee.remaining_vacation_days - vacation_duration < 0 # && description == 'Vacation'
