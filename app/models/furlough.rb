@@ -117,13 +117,14 @@ class Furlough < ActiveRecord::Base
     end
   end
 
-  # def is_approved?
-  #   if :approved => true
-  #     "Approved"
-  #   else 
-  #     "Not approved"
-  #   end
-  # end
+  def is_approved?
+    if approved == true
+      "Approved" 
+    else 
+      "Pending approval"
+    end
+  end
+end
 
   # def validate_vacation_cap
   #   if employee.remaining_vacation_days - vacation_duration < 0 # && description == 'Vacation'
@@ -136,5 +137,3 @@ class Furlough < ActiveRecord::Base
   #     errors.add(:whoops!, "Oh no! You've exceeded your limit for sick days, you poor thing!")
   #   end
   # end
-
-end
