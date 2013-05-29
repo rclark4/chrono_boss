@@ -29,6 +29,11 @@
 </p>
 
 <p>
+  <b>Status:</b>
+  <%= @furlough.is_approved? %>
+</p>
+
+<p>
   <b><h3>remaining</b></h3></p>
   <b>Vacation</b>
   <%= @furlough.employee.remaining_vacation_days %> days(s)

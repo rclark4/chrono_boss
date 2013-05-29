@@ -58,6 +58,9 @@
     <th></th>   
     <th>Note</th>
     <th></th>
+    <th>Status</th>
+    <th></th>
+    <th>Edit</th>
   </tr>
 
 <% @employee.furloughs.each do |furlough| %>
@@ -72,6 +75,10 @@
     <td></td>    
     <td><%= furlough.note %></td>
     <td></td>
+    <td><%= furlough.is_approved? %></td>
+    <td></td>
+    <td><%= link_to 'Edit', edit_furlough_path(furlough), :class => 'btn btn-mini' %></td>
+    <td><%= link_to 'Destroy', furlough, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini' %></td>
   </tr>
 <% end %>
 </table>

@@ -11,6 +11,15 @@
     </div>
   <% end %>
 
+      <% if current_user.admin? %>
+
+  <div class="field">
+    <%= f.radio_button :approved, true, :checked => true %> Approved
+    <%= f.radio_button :approved, false %> Pending approval
+  </div>
+
+    <% end %>
+
 <div class="input-mini", "field">
     <%= f.label :employee_id %><br />
     <%= f.number_field :employee_id %>
@@ -38,17 +47,6 @@
     <%= f.label :note %> <p>
     <%= f.text_field :note %> 
   </div>
-
-    <% if current_user.admin? %>
-
-  <div class="field">
-    <%= f.label :approve %><p>
-    <%= f.radio_button :approved, true, :checked => true %> Approve
-    <%= f.radio_button :approved, false %> Not approved
-  </div>
-
-    <% end %>
-
 
   <div class="actions">
     <%= f.submit %>
