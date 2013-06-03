@@ -23,14 +23,17 @@
     <%= f.label :employee_id %>
     <%= f.number_field :employee_id %>
   </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
   </div>
-    <div class="field">
-    <%= f.label :vacation_days_used %>
-    <%= f.number_field :vacation_days_used %>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
   </div>
-    <div class="field">
-    <%= f.label :sick_days_used %>
-    <%= f.number_field :sick_days_used %>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
   </div>
   <div class="field">
     <%= f.label :hire_date %>

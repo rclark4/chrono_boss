@@ -1,19 +1,11 @@
 ChronoBoss::Application.routes.draw do
-  get 'signup', to: 'users#new', as: 'signup'
+  get 'signup', to: 'employees#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
-
-  # resources :users
-  # resources :sessions
-
-  # root :to => "employees#index"
-  # resources :employees
-  # resources :furloughs
 
   resources :sessions
   resources :employees
   resources :furloughs
-  resources :users
 
   root :to => "employees#home"
   match "/home" => "employees#home"

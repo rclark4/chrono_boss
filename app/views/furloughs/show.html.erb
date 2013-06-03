@@ -45,7 +45,7 @@
 <p></p>
 <%= link_to "New Request", new_furlough_path, :class => 'btn' %>
 <%= link_to 'Edit', edit_furlough_path(@furlough), :class => 'btn' %>
-<%= link_to 'Home', home_path, :class => 'btn' %>
-<% if current_user.admin? %>
+<%= link_to 'Home', @current_employee, :class => 'btn' %>
+<% if current_employee.admin? %>
 <%= link_to 'View all Furloughs', furloughs_path, :class => 'btn' %>
   <% end %>

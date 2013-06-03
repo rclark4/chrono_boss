@@ -4,7 +4,7 @@ class FurloughsController < ApplicationController
     @furloughs = Furlough.order(:date_from).reverse
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.json { render json: @furloughs }
     end
   end
@@ -13,7 +13,7 @@ class FurloughsController < ApplicationController
     @furlough = Furlough.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.json { render json: @furlough }
     end
   end
@@ -22,7 +22,7 @@ class FurloughsController < ApplicationController
     @furlough = Furlough.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
       format.json { render json: @furlough }
     end
   end
@@ -69,10 +69,10 @@ class FurloughsController < ApplicationController
     end
   end
 
-  private # let's see how this works
+  private
 
-  def authorized_user
-    @furlough = current_user.furloughs.find_by_id(params[:id])
+  def authorized_employee
+    @furlough = current_employee.furloughs.find_by_id(params[:id])
     redirect_to root_path if @furlough.nil?
   end
 end

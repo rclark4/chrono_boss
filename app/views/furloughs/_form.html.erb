@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-      <% if current_user.admin? %>
+      <% if current_employee.admin? %>
 
   <div class="field">
     <%= f.radio_button :approved, true, :checked => true %> Approved

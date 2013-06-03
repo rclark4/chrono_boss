@@ -1,5 +1,4 @@
 class Furlough < ActiveRecord::Base
-  
   attr_accessible :vacation_duration, :sick_duration, :note, :date_from, :date_to, :description, :employee_id, :length_of_day, :approved
   belongs_to :employee
   validates_presence_of :date_from, :date_to, :employee_id, :description, :vacation_duration, :sick_duration

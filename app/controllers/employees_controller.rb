@@ -4,7 +4,7 @@ class EmployeesController < ApplicationController
     @employees = Employee.order(:last_name)
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.json { render json: @employees }
     end
   end
@@ -13,16 +13,16 @@ class EmployeesController < ApplicationController
     @employee = Employee.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.json { render json: @employee }
     end
   end
 
   def new
-    @employee = Employee.new(:vacation_days => 10, :vacation_days_used => 0, :sick_days_used => 0, :sick_days => 5)
+    @employee = Employee.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
       format.json { render json: @employee }
     end
   end

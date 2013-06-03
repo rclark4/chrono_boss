@@ -2,4 +2,7 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Back', furloughs_path %>
+<%= link_to 'Home', @current_employee, :class => 'btn'  %>
+<% if current_employee.admin? %>
+<%= link_to 'View all Furloughs', furloughs_path, :class => 'btn' %>
+<% end %>

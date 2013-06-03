@@ -1,6 +1,7 @@
 class Employee < ActiveRecord::Base
-  attr_accessible :employee_id, :first_name, :hire_date, :last_name, :sick_days, :vacation_days, :sick_days_used, :vacation_days_used
-  validates :employee_id, :first_name, :last_name, :sick_days, :vacation_days, :sick_days_used, :vacation_days_used, :presence => true
+  has_secure_password
+  attr_accessible :employee_id, :first_name, :hire_date, :last_name, :email, :password, :password_digest, :password_confirmation, :admin
+  # validates :employee_id, :first_name, :last_name #, :sick_days, :vacation_days, :sick_days_used, :vacation_days_used, :presence => true
   has_many :furloughs, :dependent => :destroy
 
   def years_employed
@@ -35,7 +36,7 @@ class Employee < ActiveRecord::Base
     self.furloughs.collect(&:sick_duration).inject(0) { | memo, n | memo + n }
   end
 
-  def vacation_days_used_last_year # if we need to collect everyone's data, all_employee_durations = Furlough.all.collect(&:vacation_duration)
+  def vacation_days_used_last_year # if we need to collect everyone's data, all_employee_durations = Furlough.all.collect(&:vacation_duration_last_year)
     self.furloughs.collect(&:vacation_duration_last_year).inject(0) { | memo, n | memo + n } 
   end
 

@@ -2,8 +2,8 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Back', home_path, :class => 'btn'  %>
-	<% if current_user.admin? %>
+<%= link_to 'Back', @current_employee, :class => 'btn'  %>
+	<% if current_employee.admin? %>
 <%= link_to 'View', @furlough, :class => 'btn btn-mini' %>
 <%= link_to 'Back to Furloughs', furloughs_path, :class => 'btn btn-mini' %>
 <%= link_to 'Destroy', @furlough, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini' %>

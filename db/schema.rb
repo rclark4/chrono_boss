@@ -11,21 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130528192232) do
+ActiveRecord::Schema.define(:version => 20130530191419) do
 
   create_table "employees", :force => true do |t|
     t.integer  "employee_id"
     t.string   "first_name"
     t.string   "last_name"
     t.date     "hire_date"
-    t.float    "sick_days"
-    t.float    "vacation_days"
-    t.float    "sick_days_used"
-    t.float    "vacation_days_used"
-    t.float    "remaining_sick_days"
-    t.float    "remaining_vacation_days"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.string   "email"
+    t.string   "password_digest"
+    t.boolean  "admin",           :default => false
   end
 
   create_table "furloughs", :force => true do |t|
@@ -39,14 +36,6 @@ ActiveRecord::Schema.define(:version => 20130528192232) do
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
     t.boolean  "approved",      :default => false
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
-    t.boolean  "admin",           :default => false
   end
 
 end
